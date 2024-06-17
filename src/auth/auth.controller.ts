@@ -16,6 +16,8 @@ export class AuthController {
       address,
     );
 
+    //TODO: Add error handling
+
     if (!isValid) {
       return { error: 'Invalid signature' };
     }

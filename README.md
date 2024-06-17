@@ -74,4 +74,10 @@ Nest is [MIT licensed](LICENSE).
 
 
 TEST
-0x882a81a599cdb2e13dd7861cf754bdb5a887bdae9e51fcbeb73f5917b8f40da450ddb1a35ef592f1b021e0beb4bd85df1d728080512742acf22b6b2e192711c21b
+{
+      id: 'opengate',
+      name: 'OPENGATE',
+      symbol: 'OG',
+      thumb:
+        'https://coin-images.coingecko.com/nft_contracts/images/2904/thumb/opengate.png',
+    },
