@@ -1,36 +1,38 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is a backend project made using NestJS framweork, some important dependencies are:
+
+- TypeORM
+- JWT
+- Ethers
+
+It returns a JWT token fom a wallet signature at POST /auth, this token is needed for future calls. Then it stores NFT projects in a Postgres database
+
+The JWT Token is then used to obtain the wallet from it, the data of the Projects is stored associated to the Wallet Address obtained from this token. Some endpoints may include a wallet but this is not taken into account when storing and retrieving the data.
+
 
 ## Installation
 
 ```bash
+Replace the .env file with the correct vars provided by email/telegram
+
 $ npm install
 ```
+
+## Testing and Lint
+
+It includes very basic generated tests, all of them check if the classes are building properly but no specific functionalities due to my time availavility. 
+
+```bash
+$ npm run tests
+```
+
+It also has linting. I have included Husky hooks to run pre-commit lint and tests, if the process fails, the commit is rejected
+
+E2E Tests
+
+It has a basic e2e test that only checks if the root is returning "Hello World!", it can be extended to any funcionality from here.
+
 
 ## Running the app
 
@@ -45,6 +47,10 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+It's configured for port 3001 http://localhost:3001
+
+I have enabled CORS for all origins, to allow easier test at this point.
+
 ## Test
 
 ```bash
@@ -57,27 +63,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
-
-
-TEST
-{
-      id: 'opengate',
-      name: 'OPENGATE',
-      symbol: 'OG',
-      thumb:
-        'https://coin-images.coingecko.com/nft_contracts/images/2904/thumb/opengate.png',
-    },
