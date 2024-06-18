@@ -10,7 +10,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import typeorm from './config/typeorm';
 
 @Module({
-  imports: [
+  imports_: [
     AuthModule,
     ProjectsModule,
     ConfigModule.forRoot({
