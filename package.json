@@ -25,7 +25,7 @@
     "migration:revert": "npm run typeorm -- -d ./src/config/typeorm.ts migration:revert"
   },
   "lint-staged": {
-    "*.ts": [
+    "*.{js,ts}": [
       "eslint --fix",
       "npm test",
       "git add"
