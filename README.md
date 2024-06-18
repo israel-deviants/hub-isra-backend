@@ -19,6 +19,13 @@ Replace the .env file with the correct vars provided by email/telegram
 $ npm install
 ```
 
+### Database Migrations
+I have provided a publica Postgres database, but in case you want to use a fresh database, you need to run migrations
+
+```bash
+$ npm run migration:run
+```
+
 ## Testing and Lint
 
 It includes very basic generated tests, all of them check if the classes are building properly but no specific functionalities due to my time availavility. 
